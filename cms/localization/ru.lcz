@@ -1,0 +1,326 @@
+<parts-management>
+Parts management
+</parts-management>
+<disable-secure-methods>
+Отключить средства защиты
+</disable-secure-methods>
+<easy-read-style>
+Логкочитаемый вид
+</easy-read-style>
+<status-loga>
+Статус лога
+</status-loga>
+<elog-statuses>
+a:11:{s:5:"empty";s:19:"Пустой (0б.)";s:4:"some";s:31:"Небольшой (1 - 501б.)";s:10:"big enough";s:40:"Крупноватый (501б. - 1Кб.)";s:3:"big";s:27:"Крупный (1 - 6Кб.)";s:7:"too big";s:36:"Большеватый (6 - 10Кб.)";s:12:"large enough";s:29:"Большой (10 - 54Кб.)";s:5:"large";s:41:"Очень Большой (54 - 181Кб.)";s:9:"too large";s:37:"Гигантский (181 - 675Кб.)";s:11:"extra large";s:58:"Невероятно гигантский (675 - 976Кб.)";s:19:"some else and fatal";s:51:"Скоро критический (976 - 1024Кб.)";s:8:"critical";s:43:"Критический (1024Кб. - 1Мб.)";}
+</elog-statuses>
+<elog-max-size>
+Максимальный размер лога ошибок
+</elog-max-size>
+<get-all-declared>
+Показать все определённые
+</get-all-declared>
+<no-editing>
+Редактированию не подлежит
+</no-editing>
+<hashing-speed>
+Скорость хеширования
+</hashing-speed>
+<hashing-cost>
+Надёжность хеширования
+</hashing-cost>
+<actions-speed>
+Скорость действий CMS
+</actions-speed>
+<clear-armoring-counter>
+Очистить защитный счётчик
+</clear-armoring-counter>
+<add-user>
+Добавить пользователя
+</add-user>
+<localized-name>
+Локализованное название
+</localized-name>
+<delete-empty-directories>
+Удалить пустые папки
+</delete-empty-directories>
+<add-permission-group>
+Добавить группу прав
+</add-permission-group>
+<group>
+Группа
+</group>
+<up>
+Повысить
+</up>
+<down>
+Понизить
+</down>
+<path>
+Путь
+</path>
+<permission>
+Право
+</permission>
+<uploadi>
+Подгрузка
+</uploadi>
+<downloadi>
+Скачивание
+</downloadi>
+<download>
+Скачать
+</download>
+<upload>
+Подгрузить
+</upload>
+<unarchive-and-apply>
+Разархивировать и применить
+</unarchive-and-apply>
+<action-if-name-exists>
+Действия при одинаковом имени
+</action-if-name-exists>
+<create-archive>
+Создать архив
+</create-archive>
+<create-archiveN>
+Создать архив низкого уровня
+</create-archiveN>
+<replace>
+Заменить
+</replace>
+<skip>
+Пропустить
+</skip>
+<timezone>
+Временная зона
+</timezone>
+<unarchive>
+Разархивировать
+</unarchive>
+<archive>
+Архивировать
+</archive>
+<pages>
+Страницы
+</pages>
+<config>
+Конфигурация
+</config>
+<exit>
+Выйти
+</exit>
+<max-memory>
+Максимальная память
+</max-memory>
+<home>
+Главная
+</home>
+<pattern>
+Шаблон
+</pattern>
+<script-modul>
+Скриптовые модули
+</script-modul>
+<plugins>
+Плагины
+</plugins>
+<salt>
+Затравка безопасности
+</salt>
+<locker>
+Замок
+</locker>
+<name>
+Имя
+</name>
+<title>
+Название
+</title>
+<value>
+Значение
+</value>
+<enter>
+Вход
+</enter>
+<set>
+Настроить
+</set>
+<change>
+Изменить
+</change>
+<add-permission>
+Добавить право
+</add-permission>
+<permission-management>
+Управление правами
+</permission-management>
+<status-management>
+Управление статусами
+</statuc-management>
+<set-permissions>
+Настроить права
+</set-permissions>
+<no-category>
+Без категории
+</no-category>
+<version>
+Версия
+</version>
+<upload-image>
+Подгрузить изображение
+</upload-image>
+<change-value>
+Сменить значение
+</change-value>
+<counter>
+Счётчик
+</counter>
+<back>
+Назад
+</back>
+<gallery>
+Галерея
+</gallery>
+<debug>
+Отладка
+</debug>
+<add>
+Добавить
+</add>
+<add-status>
+Добавить статус
+</add-status>
+<if-you-know-what-are-you-doing>
+Без повода изменять не рекомендуется.
+</if-you-know-what-are-you-doing>
+<delete-archive>
+Удалить архив
+</delete-archive>
+<set-able>
+Настроить возможность
+</set-able>
+<set-cms-pattern>
+Настроить шаблон cms
+</set-cms-pattern>
+<delete-directory>
+Удалить папку
+</delete-directory>
+<delete>
+Удалить
+</delete>
+<username>
+Имя пользователя
+</username>
+<your-status>
+Ваш статус
+</your-status>
+<hello>
+Здравствуйте
+</hello>
+<password>
+Пароль
+</password>
+<status>
+Статус
+</status>
+<size>
+Размер
+</size>
+<clear>
+Очистить
+</clear>
+<directory>
+Папка
+</directory>
+<apply>
+Применить
+</apply>
+<delete>
+Удалить
+</delete>
+<new>
+Новый
+</new>
+<create>
+Создать
+</create>
+<display>
+Показать
+</display>
+<extension>
+Расширение
+</extension>
+<hide>
+Скрыть
+</hide>
+<classes>
+Классы
+</classes>
+<extensions>
+Расширения
+</extensions>
+<functions>
+Функции
+</functions>
+<constants>
+Константы
+</constants>
+<loc>
+	<mys>Шаблон CMS</mys>
+	<lock>Замок</lock>
+	<uncodeform>Защитный счётчик</uncodeform>
+	<timezone>Временная зона</timezone>
+	<clever>Продвинутые пользователи</clever>
+	<highlight>Подсветка синтаксиса</highlight>
+	<autowid>Автовыделение</autowid>
+	<delay>Задержка автовыделения</delay>
+	<magaz>Путь магазина</magaz>
+	<adminpath>Путь статической справки</adminpath>
+	<obuffered>Ускорение действий буферизацией</obuffered>
+	<cache>Кэширование</cache>
+	<protector>Модуль Protector</protector>
+	<error>Размер лога ошибок</error>
+	<shab>Шаблон по умолчанию</shab>
+	<locker>Активность замка</locker>
+	<salt>Активность соли</salt>
+	<counter>Активность защитного счётчика</counter>
+</loc>
+<datatype>
+	<value>
+		<bool>
+			<true>Да</true>
+			<false>Нет</false>
+		</bool>
+		<int>
+			<ex1>1</ex1>
+			<ex2>2</ex2>
+			<ex3>3</ex3>
+		</int>
+		<float>
+			<ex1>f1</ex1>
+			<ex2>f2</ex2>
+			<ex3>f3</ex3>
+		</float>
+		<string>
+			<ex1>"стр"</ex1>
+			<ex2>"абв"</ex2>
+			<ex3>"123"</ex3>
+		</string>
+		<null>ПУСТОТА</null>
+		<array>МАССИВ</array>
+	</value>
+	<type>
+		<bool>Логика</bool>
+		<int>Целое</int>
+		<float>Дробное</float>
+		<string>Строка</string>
+		<null>Пустота</null>
+		<array>Массив</array>
+	</type>
+</datatype>
+<etlfirst>
+<big style="color: red;">Отсутствуют</big> и <big style="color:blue;">лишние</big> в списке:
+</etlfirst>
+<etlsecond>
+Список ошибочных имён (<big style="color: red;">к</big>/<big style="color:blue;">с</big>) не пуст
+</etlsecond>

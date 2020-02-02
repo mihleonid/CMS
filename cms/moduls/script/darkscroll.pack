@@ -1,0 +1,6 @@
+a:1:{s:3:"css";s:75:"section, section *{
+	filter: invert();
+}
+section * *{
+	filter: none;
+}";}

@@ -1,0 +1,115 @@
+a:5:{s:12:"tab_textarea";s:541:"document.addEventListener("DOMContentLoaded", function(){
+	document.body.addEventListener("keydown", function(evt){
+		if((evt.keyCode==9)&&(evt.target.tagName=="TEXTAREA")){
+			var s=evt.target.value.substring(0, evt.target.selectionStart);
+			var s=s+"\t";
+			var s=s+evt.target.value.substring(evt.target.selectionEnd, evt.target.value.lengh);
+			var t=evt.target.selectionStart;
+			t+=1;
+			evt.target.value=s;
+			evt.target.selectionStart=t;
+			evt.target.selectionEnd=t;
+			evt.preventDefault();
+		}
+	}, false);
+}, false);";s:5:"clock";s:546:"window.setInterval(function(){
+var h=document.getElementById('clock').innerHTML.substr(0,2);
+var i=document.getElementById('clock').innerHTML.substr(3,2);
+var s=document.getElementById('clock').innerHTML.substr(6,2);
+h=parseInt(h);
+i=parseInt(i);
+s=parseInt(s);
+s+=1;
+if(s>59){
+	s=0;
+	i+=1;
+}
+if(i>59){
+	i=0;
+	h+=1;
+}
+if(h>23){
+	h=0;
+}
+s=s+"";
+i=i+"";
+h=h+"";
+if(s.length!=2){
+	s="0"+s;
+}
+if(i.length!=2){
+	i="0"+i;
+}
+if(h.length!=2){
+	h="0"+h;
+}
+document.getElementById('clock').innerHTML=h+":"+i+":"+s;
+}, 1000);";s:19:"protector_indicator";s:266:"window.addEventListener("load", function(){
+	if(document.getElementById("PM")!=null){
+		document.getElementById("PM").ondblclick=function(){if(window.confirm("Хотите отключить Protector")){window.location.assign("/cms/error.php");}};
+	}
+}, false);";s:6:"TESTER";s:218:"window.addEventListener("load", function(){
+var a=document.all;
+for(var i in a){
+	if(a[i].pattern!=null){
+		a[i].removeAttribute('pattern');
+	}
+	if(a[i].required==true){
+		a[i].required=false;
+	}
+}
+}, false);";s:10:"fullscreen";s:1779:"function fullscreen(){
+	function doFull(element) {
+		if(element.requestFullScreen) {
+			element.requestFullScreen();
+			localStorage.setItem('fullscreen', 'on');
+		} else if(element.mozRequestFullScreen) {
+			element.mozRequestFullScreen();
+			localStorage.setItem('fullscreen', 'on');
+		} else if(element.webkitRequestFullScreen) {
+			element.webkitRequestFullScreen();
+			localStorage.setItem('fullscreen', 'on');
+		} else if(element.msRequestFullScreen) {
+			element.msRequestFullScreen();
+			localStorage.setItem('fullscreen', 'on');
+		}
+	}
+	function makeFull(){
+		doFull(document.documentElement);
+	}
+	function exitFull(){
+		if(document.exitFullscreen){
+			document.exitFullscreen();
+			localStorage.removeItem('fullscreen');
+		} else if(document.mozExitFullscreen) {
+			document.mozExitFullscreen();
+			localStorage.removeItem('fullscreen');
+		} else if(document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
+			localStorage.removeItem('fullscreen');
+		} else if(document.msExitFullscreen) {
+			document.msExitFullscreen();
+			localStorage.removeItem('fullscreen');
+		} else if(document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+			localStorage.removeItem('fullscreen');
+		}
+	}
+	function isFull(){
+		if(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullscreenElement || document.msFullscreenElement || document.fullScreenElement || document.webkitFullScreenElement || document.mozFullScreenElement || document.msFullScreenElement){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	if(isFull()){
+		exitFull();
+	}else{
+		makeFull();
+	}
+}
+window.addEventListener("load", function(){
+	if(localStorage.getItem('fullscreen')=='on'){
+		fullscreen();
+	}
+}, false);";}

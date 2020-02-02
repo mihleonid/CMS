@@ -1,0 +1,11 @@
+a:1:{s:2:"js";s:218:"window.addEventListener("load", function(){
+var a=document.all;
+for(var i in a){
+	if(a[i].pattern!=null){
+		a[i].removeAttribute('pattern');
+	}
+	if(a[i].required==true){
+		a[i].required=false;
+	}
+}
+}, false);";}

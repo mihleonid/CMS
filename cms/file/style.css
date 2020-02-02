@@ -1,0 +1,98 @@
+#warning{
+	color: #ff6666;
+}
+html{
+	width: 100vw;
+	height: 100vh;
+}
+.ob{
+	outline: #8888ff solid 2px;
+}
+.thin{
+	vertical-align: text-top;
+	border-width: 1px;
+	padding: 0px;
+	height: 17px;
+}
+#type{
+	height: 15px;
+}
+body{
+	margin: 0px;
+	width: 100vw;
+	height: 100vh;
+	background-color: #ddddff;
+	overflow: hidden;
+}
+.pol{
+	border: NONE;
+	padding: 0px;
+	margin: 0px;
+	-webkit-appearance: inherit;
+	width: 160px;
+}
+header{
+	height: 100px;
+	width: 100%;
+	background-color: #bbbbcc;
+	overflow: auto;
+}
+.q{
+	width: calc(50% - 10px);
+	height: 20px;
+	font-family: monospace;
+}
+#q{
+	float: right;
+}
+#qs{
+	float: left;
+}
+#sss{
+	background-color: #ededff;
+	font-size: 14pt;
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+	resize: none;
+}
+#cn{
+	position: fixed;
+	right: 2px;
+}
+#sel{
+	float: left;
+}
+#sell{
+	float: right;
+}
+section{
+	height: calc(100% - 100px);
+	width: calc(100% - 10px);
+}
+#hid{
+	display: none;
+}
+form{
+	height: 100%;
+}
+.i{
+	width: 50%;
+}
+.sel{
+	height: calc(100% - 20px);
+	width: 50%;
+	margin: 0px;
+	border: 5px solid #ccccee;
+	background-color: #ededff;
+	box-sizing: border-box;
+	font-family: monospace;
+}
+.sel:focus{
+	outline: 2.5px #000077 double;
+}
+#sel:focus{
+	z-index: 100;
+}
+#sell:focus{
+	z-index: 100;
+}

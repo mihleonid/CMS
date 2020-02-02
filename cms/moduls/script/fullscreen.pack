@@ -1,0 +1,55 @@
+a:1:{s:2:"js";s:1779:"function fullscreen(){
+	function doFull(element) {
+		if(element.requestFullScreen) {
+			element.requestFullScreen();
+			localStorage.setItem('fullscreen', 'on');
+		} else if(element.mozRequestFullScreen) {
+			element.mozRequestFullScreen();
+			localStorage.setItem('fullscreen', 'on');
+		} else if(element.webkitRequestFullScreen) {
+			element.webkitRequestFullScreen();
+			localStorage.setItem('fullscreen', 'on');
+		} else if(element.msRequestFullScreen) {
+			element.msRequestFullScreen();
+			localStorage.setItem('fullscreen', 'on');
+		}
+	}
+	function makeFull(){
+		doFull(document.documentElement);
+	}
+	function exitFull(){
+		if(document.exitFullscreen){
+			document.exitFullscreen();
+			localStorage.removeItem('fullscreen');
+		} else if(document.mozExitFullscreen) {
+			document.mozExitFullscreen();
+			localStorage.removeItem('fullscreen');
+		} else if(document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
+			localStorage.removeItem('fullscreen');
+		} else if(document.msExitFullscreen) {
+			document.msExitFullscreen();
+			localStorage.removeItem('fullscreen');
+		} else if(document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+			localStorage.removeItem('fullscreen');
+		}
+	}
+	function isFull(){
+		if(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullscreenElement || document.msFullscreenElement || document.fullScreenElement || document.webkitFullScreenElement || document.mozFullScreenElement || document.msFullScreenElement){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	if(isFull()){
+		exitFull();
+	}else{
+		makeFull();
+	}
+}
+window.addEventListener("load", function(){
+	if(localStorage.getItem('fullscreen')=='on'){
+		fullscreen();
+	}
+}, false);";}

@@ -1,0 +1,117 @@
+a:2:{s:3:"css";s:68:"#wait{
+	position: fixed;
+	display: none;
+	z-index: 9999999999;
+}";s:2:"js";s:4218:"function blurror(){
+	document.getElementsByTagName('NAV')[0].style.filter="blur(2.3px)";
+	document.getElementsByTagName('HEADER')[0].style.filter="blur(2.3px)";
+	document.getElementsByTagName('SECTION')[0].style.filter="blur(2.3px)";
+	document.getElementsByTagName('FOOTER')[0].style.filter="blur(2.3px)";
+}
+function bigtimeoutwait(){
+unwaite();
+blurror();
+document.getElementById('wait').style.display='block';
+windowtimeoutwaitu=window.setInterval(function(){
+	var tint=parseInt(document.getElementById('wait').style.top);
+	var lint=parseInt(document.getElementById('wait').style.left);
+	var ne="";
+	
+	if(isNaN(tint)){
+		tint=0;
+	}
+	if(isNaN(lint)){
+		lint=0;
+	}
+	
+	
+	if(tint > (window.innerHeight - document.getElementById('wait').offsetHeight)){
+		napravofwaittop=0;
+	}else
+	if(tint < 0){
+		napravofwaittop=1;
+	}
+	switch(napravofwaittop){
+		case 1:
+		ne=tint+1+"px";
+		break;
+		case 0:
+		ne=tint-1+"px";
+		break;
+	}
+	document.getElementById('wait').style.top=ne;
+	ne="";
+	
+	if(lint > (window.innerWidth - document.getElementById('wait').offsetWidth)){
+		napravofwaitleft=0;
+	}else
+	if(lint < 0){
+		napravofwaitleft=1;
+	}
+	switch(napravofwaitleft){
+		case 1:
+		ne=lint+1+"px";
+		break;
+		case 0:
+		ne=lint-1+"px";
+		break;
+	}
+	document.getElementById('wait').style.left=ne;
+}, 10);}
+function unwait(){
+	if(windowtimeoutwaitu!=null){
+		window.clearInterval(windowtimeoutwaitu);
+		windowtimeoutwait=null;
+	}
+	if(windowtimeoutwait!=null){
+		window.clearTimeout(windowtimeoutwait);
+		windowtimeoutwait=null;	
+	}
+	document.getElementsByTagName('NAV')[0].style.filter="none";
+	document.getElementsByTagName('HEADER')[0].style.filter="none";
+	document.getElementsByTagName('SECTION')[0].style.filter="none";
+	document.getElementsByTagName('FOOTER')[0].style.filter="none";
+	document.getElementById('wait').style.display="none";
+	napravofwaittop=Math.floor(Math.random()*2);
+	napravofwaitleft=Math.floor(Math.random()*2);
+	document.getElementById('wait').style.top=Math.floor(Math.random()*(window.innerHeight - document.getElementById('wait').offsetHeight))+"px";
+	document.getElementById('wait').style.left=Math.floor(Math.random()*(window.innerWidth - document.getElementById('wait').offsetWidth))+"px";
+}
+function unwaite(){
+	if(windowtimeoutwaitu!=null){
+		window.clearInterval(windowtimeoutwaitu);
+		windowtimeoutwait=null;
+	}
+	document.getElementsByTagName('NAV')[0].style.filter="none";
+	document.getElementsByTagName('HEADER')[0].style.filter="none";
+	document.getElementsByTagName('SECTION')[0].style.filter="none";
+	document.getElementsByTagName('FOOTER')[0].style.filter="none";
+	napravofwaittop=Math.floor(Math.random()*2);
+	napravofwaitleft=Math.floor(Math.random()*2);
+	document.getElementById('wait').style.top=Math.floor(Math.random()*(window.innerHeight - document.getElementById('wait').offsetHeight))+"px";
+	document.getElementById('wait').style.left=Math.floor(Math.random()*(window.innerWidth - document.getElementById('wait').offsetWidth))+"px";
+}
+var napravofwaittop=Math.floor(Math.random()*2);
+var napravofwaitleft=Math.floor(Math.random()*2);
+var windowtimeoutwait;
+var windowtimeoutwaitu;
+windowtimeoutwait=null;
+windowtimeoutwaitu=null;
+document.addEventListener("DOMContentLoaded", function(){
+document.body.innerHTML="<div id=\"wait\">\n<img src=\"/cms/pic/wait.png\" />\n</div>\n"+document.body.innerHTML;
+windowtimeoutwait=window.setTimeout(bigtimeoutwait, 60000);
+document.getElementById('wait').style.top=Math.floor(Math.random()*(window.innerHeight - document.getElementById('wait').offsetHeight))+"px";
+document.getElementById('wait').style.left=Math.floor(Math.random()*(window.innerWidth - document.getElementById('wait').offsetWidth))+"px";
+document.body.addEventListener("keydown", function(evt){
+	unwait();
+	windowtimeoutwait=window.setTimeout(bigtimeoutwait, 60000);
+}, false);
+document.body.addEventListener("mousemove", function(evt){
+	unwait();
+	windowtimeoutwait=window.setTimeout(bigtimeoutwait, 60000);
+}, false);
+document.body.addEventListener("click", function(evt){
+	unwait();
+	windowtimeoutwait=window.setTimeout(bigtimeoutwait, 60000);
+}, false);
+}, false);";}

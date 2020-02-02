@@ -1,0 +1,293 @@
+<parts-management>
+Parts management
+</parts-management>
+<disable-secure-methods>
+Disable secure methods
+</disable-secure-methods>
+<easy-read-style>
+Easy-read style
+</easy-read-style>
+<status-loga>
+log status
+</status-loga>
+<elog-statuses>
+a:11:{s:5:"empty";s:12:"empty (0б.)";s:4:"some";s:17:"some (1 - 501б.)";s:10:"big enough";s:28:"big enough (501б. - 1Кб.)";s:3:"big";s:16:"big (1 - 6Кб.)";s:7:"too big";s:21:"too big (6 - 10Кб.)";s:12:"large enough";s:27:"large enough (10 - 54Кб.)";s:5:"large";s:21:"large (54 - 181Кб.)";s:9:"too large";s:26:"too large (181 - 675Кб.)";s:11:"extra large";s:28:"extra large (675 - 976Кб.)";s:19:"some else and fatal";s:37:"some else and fatal (976 - 1024Кб.)";s:8:"critical";s:29:"critical (1024Кб. - 1Мб.)";}
+</elog-statuses>
+<elog-max-size>
+Error log maximal size
+</elog-max-size>
+<get-all-declared>
+Get all declared
+</get-all-declared>
+<clear-armoring-counter>
+Clear armoring counter
+</clear-armoring-counter>
+<add-permission-group>
+Add permission group
+</add-permission-group>
+<add-user>
+Add user
+</add-user>
+<delete-archive>
+Delete archive
+</delete-archive>
+<localized-name>
+Localized name
+</localized-name>
+<add-permission>
+Add permission
+</add-permission>
+<permission-management>
+Permission management
+</permission-management>
+<no-category>
+No category
+</no-category>
+<set-permissions>
+Set permission
+</set-permissions>
+<status-management>
+Status management
+</status-management>
+<up>
+Up
+</up>
+<down>
+Down
+</down>
+<delete-empty-directories>
+Delete empty directories
+</delete-empty-directories>
+<if-you-know-what-are-you-doing>
+If you know what are you doing.
+</if-you-know-what-are-you-doing>
+<upload-image>
+Upload image
+</upload-image>
+<unarchive-and-apply>
+Unarchive and apply
+</unarchive-and-apply>
+<action-if-name-exists>
+Action if name exists
+</action-if-name-exists>
+<create-archive>
+Create archive
+</create-archive>
+<create-archiveN>
+Create low level archive
+</create-archiveN>
+<set-cms-pattern>
+Set cms pattern
+</set-cms-pattern>
+<your-status>
+Your status
+</your-status>
+<set-able>
+Set able
+</set-able>
+<delete-directory>
+Delete directory
+</delete-directory>
+<directory>
+Directory
+</directory>
+<username>
+Username
+</username>
+<hello>
+Hello
+</hello>
+<password>
+Password
+</password>
+<clear>
+Clear
+</clear>
+<type>
+Тип
+</type>
+<replace>
+Replace
+</replace>
+<skip>
+Skip
+</skip>
+<new>
+New
+</new>
+<create>
+Create
+</create>
+<timezone>
+Timezone
+</timezone>
+<unarchive>
+Unarchive
+</unarchive>
+<archive>
+Archive
+</archive>
+<extension>
+Extension
+</extension>
+<home>
+Home
+</home>
+<status>
+Status
+</status>
+<name>
+Name
+</name>
+<path>
+Path
+</path>
+<group>
+Group
+</group>
+<permission>
+Permission
+</permission>
+<change>
+Change
+</change>
+<title>
+Title
+</title>
+<value>
+Value
+</value>
+<enter>
+Enter
+</enter>
+<set>
+Set
+</set>
+<change-value>
+Change value
+</change-value>
+<upload>
+Upload
+</upload>
+<version>
+Version
+</version>
+<download>
+Download
+</download>
+<uploadi>
+Upload
+</uploadi>
+<downloadi>
+Download
+</downloadi>
+<pages>
+Pages
+</pages>
+<pattern>
+Pattern
+</pattern>
+<config>
+Configuration
+</config>
+<exit>
+Exit
+</exit>
+<script-modul>
+Script modul
+</script-modul>
+<plugins>
+Plugins
+</plugins>
+<back>
+Back
+</back>
+<salt>
+Salt
+</salt>
+<locker>
+Locker
+</locker>
+<counter>
+Counter
+</counter>
+<add>
+Add
+</add>
+<add-status>
+Add status
+</add-status>
+<size>
+Size
+</size>
+<apply>
+Apply
+</apply>
+<gallery>
+Gallery
+</gallery>
+<debug>
+Debug
+</debug>
+<delete>
+Delete
+</delete>
+<display>
+Display
+</display>
+<hide>
+Hide
+</hide>
+<classes>
+Classes
+</classes>
+<extensions>
+Extensions
+</extensions>
+<functions>
+Functions
+</functions>
+<constants>
+Constants
+</constants>
+<no-editing>
+Can`t be edited
+</no-editing>
+<datatype>
+	<value>
+		<true>True</true>
+		<false>False</false>
+		<int>
+			<ex1>1</ex1>
+			<ex2>2</ex2>
+			<ex3>3</ex3>
+		</int>
+		<float>
+			<ex1>f1</ex1>
+			<ex2>f2</ex2>
+			<ex3>f3</ex3>
+		</float>
+		<string>
+			<ex1>"str"</ex1>
+			<ex2>"abc"</ex2>
+			<ex3>"123"</ex3>
+		</string>
+		<null>NULL</null>
+		<array>ARRAY</array>
+		<tmp-null>Empty for this moment</tmp-null>
+	</value>
+	<type>
+		<bool>Boolean</bool>
+		<int>Integer</int>
+		<float>Float number</float>
+		<string>String</string>
+		<null>Null</null>
+		<array>Array</array>
+	</type>
+</datatype>
+<etlfirst>
+<big style="color: red;">Not existing</big> and <big style="color:blue;">odd</big> elements in the list:
+</etlfirst>
+<etlsecond>
+List of wrong names (<big style="color: red;">r</big>/<big style="color:blue;">b</big>) is not empty
+</etlsecond>

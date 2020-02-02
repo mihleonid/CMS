@@ -1,0 +1,23 @@
+a:2:{s:5:"clock";s:264:"$h=date("H");
+if(strlen($h)!=2){
+$h="0".$h;
+}
+$i=date("i");
+if(strlen($h)!=2){
+$i="0".$i;
+}
+$s=date("s");
+if(strlen($h)!=2){
+$s="0".$s;
+}
+$time=$h.":".$i.":".$s;
+echo("<div id=\"clock\">$time</div>");
+unset($time);
+unset($s);
+unset($h);
+unset($i);";s:19:"protector_indicator";s:163:"$PM='<img src="/cms/pic/protector_mini.png" id="PM"></img>';
+if("\\LCMS\\MainModules\\Protector"){
+	if(\LCMS\MainModules\Protector::mode()){
+		echo($PM);
+	}
+}";}

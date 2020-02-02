@@ -1,0 +1,20 @@
+.IMGDIV{
+	box-shadow: 0 0 20px -4px black;
+	position: relative;
+	display: inline-block;
+	margin: 1px;
+}
+.CHECKED{
+	opacity: 0;
+	display: inline-block;
+	position: absolute;
+	left: -5px;
+	top: -5px;
+	transform: rotate(360deg);
+	transition: all 1.5s;
+}
+.CH+.CHECKED{
+	transform: rotate(0deg);
+	opacity: 1;
+	transition: all 1.5s;
+}

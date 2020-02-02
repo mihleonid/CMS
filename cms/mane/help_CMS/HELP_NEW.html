@@ -1,0 +1,529 @@
+<!doctype html>
+<html>
+<head>
+<style>
+html{
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+.con{
+	border: 1px solid blue;
+	box-sizing: border-box;
+	position: fixed;
+	height: calc(100vh - 40px);
+	top: 40px;
+	bottom: 0;
+	overflow: auto;
+	transition: width 1s;
+}
+.left{
+	padding-right: 5px;
+	padding-left: 8px;
+	padding-top: 2px;
+	padding-bottom: 20px;
+	left: 0;
+	width: 100vw;
+}
+.right{
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	height: 100vh;
+	overflow: hidden;
+	width: 30vw;
+	z-index: 999999;
+}
+#imgo{
+	transition: 1s;
+	max-width: 100%;
+}
+h1{
+	margin: 0;
+	padding: 0;
+	color: blue;
+	height: 40px;
+	font-size: 34px;
+}
+body{
+	font-size: 13pt;
+	font-family: "Times New Roman", "Arial", "Courier New", "Courier", monospace;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+.imglink{
+	text-decoration-skip-ink: none;
+	text-decoration: underline dotted blue;
+}
+p{
+	text-indent: 6px;
+}
+</style>
+<style>
+div.info{
+	padding-left: 12px;
+	display: none;
+}
+div.info.wa{
+	display: block;
+}
+</style>
+<style>
+h6{
+	font-size: 14pt;
+}
+h5{
+	font-size: 15pt;
+}
+h4{
+	font-size: 16pt;
+}
+h3{
+	font-size: 17pt;
+}
+h2{
+	font-size: 18pt;
+}
+</style>
+<style>
+::-webkit-scrollbar{
+	width:12px;
+	padding: 5px 0px;
+}
+::-webkit-scrollbar-thumb{
+	border-width:1px 1px 1px 2px;
+	border-color: #777;
+	border-radius: 50px;
+	background-color: #aaa;
+	background-image: linear-gradient(100deg, transparent, #555);
+}
+::-webkit-scrollbar-button:start:decrement{
+	background-color: aliceblue;
+	height: 16px;
+	background-image: url('/cms/pic/scrolltop.png');
+	background-size: 12px 16px;
+}
+::-webkit-scrollbar-button:end:increment{
+	background-color: aliceblue;
+	height: 16px;
+	background-image: url('/cms/pic/scrollbottom.png');
+	background-size: 12px 16px;
+}
+::-webkit-scrollbar:hover{
+	border-width: 1px 1px 1px 2px;
+	border-color: #555;
+}
+::-webkit-scrollbar-thumb:hover{
+	background-color: #777;
+	background-image: linear-gradient(100deg, #555, transparent);
+}
+::-webkit-scrollbar-track{
+	border-radius: 50px;
+	border-width:0;
+}
+::-webkit-scrollbar-track{
+	border-left: solid 1px #aaa;
+	border-top: solid 1px #aaa;
+	background-color: rgba(238, 238, 238, 0.4);
+}
+::-webkit-scrollbar-track:hover{
+	border-left: solid 1px #aaa;
+	border-top: solid 1px #aaa;
+	background-color: #eee;
+}
+::-webkit-scrollbar-button{
+	border-radius: 50px;
+}
+::-webkit-scrollbar-corner{
+	border-radius: 50px;
+	background-color: #33ee33;
+}
+
+::-webkit-scrollbar:horizontal{
+	height: 12px;
+}
+::-webkit-scrollbar-button:horizontal:start{
+	background-color: aliceblue;
+	height: 12px;
+	width: 16px;
+	background-image: url('/cms/pic/scrollleft.png');
+	background-size: 16px 12px;
+}
+::-webkit-scrollbar-button:horizontal:end{
+	background-color: aliceblue;
+	height: 12px;
+	width: 16px;
+	background-image: url('/cms/pic/scrollright.png');
+	background-size: 16px 12px;
+}
+::-webkit-scrollbar:disabled{
+	display: none;
+}
+</style>
+<script>
+var tec=1;
+var o=new Array();
+window.onload=function(){
+	var a=document.getElementsByClassName("imglink");
+	tec=window.setTimeout(function(){document.getElementsByClassName("left")[0].style.width="100vw";document.getElementsByClassName("right")[0].style.width="0vw";window.localStorage.setItem("was", 1);}, ((window.localStorage.getItem("was")==1)?(10):(2000)));
+	for(var i=0;i<a.length;i++){
+		a[i].addEventListener("mouseover", function(evt){window.clearTimeout(tec);document.getElementById("imgo").src=evt.currentTarget.dataset.src;document.getElementsByClassName("left")[0].style.width="100vw";/*59*/document.getElementsByClassName("right")[0].style.width="41vw";}, false);
+		a[i].addEventListener("mouseout", function(evt){tec=window.setTimeout(function(evt){document.getElementById("imgo").src="/cms/mane/help_CMS/sites.png";document.getElementsByClassName("left")[0].style.width="100vw";document.getElementsByClassName("right")[0].style.width="0vw";}, 2000, evt);}, false);
+	}
+	a=document.getElementsByClassName("info");
+	var w;
+	for(var i=0;i<a.length;i++){
+		var img = document.createElement('img');
+		o.push(img);
+		img.src="/cms/mane/help_CMS/flagright.png";
+		img.style.marginLeft="15px";
+		img.style.maxHeight="30px";
+		img.style.maxWidth="30px";
+		w=window.getComputedStyle(a[i].previousElementSibling).height;
+		img.style.height=w;
+		img.style.width=w;
+		//a[i].style.display="none";
+		a[i].previousElementSibling.style.verticalAlign="bottom";
+		img.style.verticalAlign="bottom";
+		img.className="closed";
+		img.addEventListener("click", function(evt){
+			if(evt.currentTarget.className=="closed"){
+				evt.currentTarget.src="/cms/mane/help_CMS/flagbottom.png";
+				evt.currentTarget.className="opend";
+				evt.currentTarget.parentElement.nextElementSibling.className="info wa";
+			}else{
+				evt.currentTarget.src="/cms/mane/help_CMS/flagright.png";
+				evt.currentTarget.className="closed";
+				evt.currentTarget.parentElement.nextElementSibling.className="info";
+			}
+		});
+		a[i].previousElementSibling.insertBefore(img, a[i].previousElementSibling.firstChild);
+	}
+};
+function ell(){
+	for(var i=0;i<o.length;i++){
+		o[i].src="/cms/mane/help_CMS/flagbottom.png";
+		o[i].className="opend";
+		o[i].parentElement.nextElementSibling.className="info wa";
+	}
+}
+</script>
+</head>
+<body>
+<h1 style="text-align: center;">Справка по CMS Leonid</h1>
+<div class="con right">
+<img id="imgo" src="/cms/mane/help_CMS/sites_hello.png" />
+</div>
+<div class="con left">
+<div style="float: right; color: blue; cursor: pointer;" onclick="ell();">Развернуть все</div>
+<h2>Введение и краткое описание</h2>
+<div class="info">
+<p>Проект CMS Leonid является разработка Михайлова Леонида и представляет собой систему управления сайтом(Content Manage System). Данная система позволяет создавать сайты и управлять ими.</p>
+<p>Однозначный и понятный интерфейс CMS Leonid организован при помощи HTML, JavaScript, CSS. Скрипты на стороне сервера созданы с помощью языка программирования PHP. Система отличается быстродействием, так как не использует внешних библиотек и готового кода.</p>
+<p>В системе CMS Leonid возможно администрирование сайта несколькими пользователями, статусами которых возможно управлять.</p>
+<p>Система имеет автоматическое обновление основного блока и полу-автоматическое (загрузка файла) плагинов, с помощью которых возможно расширять возможности CMS. Плагины (как и прочие модули и шаблоны) легко получить из встроенного магазина CMS (содержащего многочисленные разработки автора).</p>
+<p>Интерфейс пользователя может быть настроен в соответствии с его пожеланиями и предпочтениями. Возможно выбирать тему для системы и фон сайта. Темы для удобства объединены в пакеты.</p>
+<p>Для создания и редактирования страниц можно использовать удобный графический редактор (разработанный автором).</p>
+<p>При операциях со страницами используются шаблоны. Шаблоны позволяют придать сайту единый вид. В шаблоне могут использоваться редко изменяемые параметры сайта (например, его название). Чтобы их редактировать без изменения всего шаблона имеется опция редактирования части. Возможно производить различные операции</p>
+<p>Часть шаблона – это элемент такового, вынесенный в отдельный файл, доступ к которому предоставляет штатный интерфейс. Части объединены в пакеты для удобства использования.</p>
+<p>Шаблоны создаются с помощью языков программирования HTML, CSS, JavaScript. Пользователи, не знакомые с ними, тоже могут редактировать шаблон, используя функцию изменения стилей шаблона.</p>
+<p>Скриптовые модули - это модули PHP, CSS, JavaScript, которые подключаются на страницу. Например, часы.</p>
+<p>Плагин - универсальный модуль системы. Они могут производить любые действия.</p>
+</div>
+<h2><span class="imglink" data-src="/cms/mane/help_CMS/pic/CMS_SUPPORT.png">Поддержка</span> системы</h2>
+<div class="info">
+<p>Данная система может быть запущена на <span class="imglink" data-src="/cms/mane/help_CMS/pic/CMS_SUPPORT_SERVER.png">большинстве</span> существующих серверах. Поддержка браузерами системы визуального редактирования также <span class="imglink" data-src="/cms/mane/help_CMS/pic/CMS_SUPPORT_BROWSER.png">велика</span>.</p>
+<p style="font-size: 10pt;">Средняя статистика из различных интернет-источников</p>
+</div>
+<h2>Пользователи</h2>
+<div class="info">
+	<p>В CMS имеется поддержка базы пользователей.</p>
+	<p>Информация о пользователях представляется в удобном виде (<span class="imglink" data-src="/cms/mane/help_CMS/pic/usertable.png">таблица</span>).</p>
+	<h3>Распределение прав. Статусы</h3>
+	<div class="info">
+		<h4>Права</h4>
+		<div class="info">
+			<h5>Категории прав</h5>
+			<div class="info">
+				<p>Для удобного управления правами в данной системе предусмотрены категории прав.</p>
+				<p>С ними возможны следующие операции:</p>
+				<ul>
+					<li>Создание новой категории</li>
+					<li>Изменение уже существующей</li>
+					<li>Удаление категории (права этой категории теперь не будут иметь какой-либо категории)</li>
+				</ul>
+			</div>
+			<h5>Управление правами</h5>
+			<div class="info">
+				<p>В CMS Leonid статусам пользователей назначаются права.</p>
+				<p>С правами возможно производить следующие операции</p>
+			</div>
+		</div>
+		<h4>Управление статусами</h4>
+		<div class="info">
+			<p>В данной системе пользователи имеют статус. Статус определяет права группы пользователей.</p>
+			<p>Со статусами можно производить следующие операции:</p>
+			<ul>
+				<li>Создавать статус</li>
+				<li>Изменять название статуса</li>
+				<li>Назначать права статусу</li>
+				<li>Удалять статус</li>
+				<li>Изменять порядок статусов:
+					<ul>
+						<li>Повышение</li>
+						<li>Понижение</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<h3>Управление пользователями</h3>
+	<div class="info">
+		<p>Имеется возможность проводить следующие операции с пользователями:</p>
+		<ul>
+			<li><span class="imglink" data-src="/cms/mane/help_CMS/pic/username.png">Вход от имени другого пользователя</span></li>
+			<li><span class="imglink" data-src="/cms/mane/help_CMS/pic/userclever.png">Назначение продвинутых пользователей</span></li>
+			<li><span class="imglink" data-src="/cms/mane/help_CMS/pic/useradd.png">Создавать пользователей</span></li>
+			<li><span class="imglink" data-src="/cms/mane/help_CMS/pic/userch.png">Сменять пароль пользователям</span></li>
+			<li><span class="imglink" data-src="/cms/mane/help_CMS/pic/useract.png">Удалять пользователей</span></li>
+			<li class="imglink" data-src="/cms/mane/help_CMS/pic/useract.png">Сменять статусы пользователей
+				<ul>
+					<li>Понижение пользователя</li>
+					<li>Повышение пользователя</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<h3>Отслеживание</h3>
+	<div class="info">
+		<p>В системе имеется возможность отслеживать действия пользователей.</p>
+		<p>Для реализации отслеживания используются следующие средства:</p>
+		<ul>
+			<li>Ведётся лог всех действий пользователя</li>
+			<li>Имеется возможность просмотреть текущее (или последнее) действие</li>
+		</ul>
+	</div>
+</div>
+<h2>Страницы</h2>
+<div class="info">
+	<p>В данной системе имеется поддержка страниц.</p>
+	<p>Страницы основаны на выбранном для неё шаблоне, полях шаблона (таких как заголовок страницы и т.п.) и частях. Отслеживать действия со страницами возможно с помощью специального лога.</p>
+	<h3>Шаблоны</h3>
+	<div class="info">
+		<p>В этой системе для создания удобного страниц используются шаблоны.</p>
+		<h4>Управление шаблонами</h4>
+		<div class="info">
+			<p>С шаблонами возможно производить следующие операции:</p>
+			<ul>
+				<li>Создать новый шаблон</li>
+				<li>Изменять шаблон</li>
+				<li>Изменять стили шаблона (изменение стиля шаблона происходит в удобном интерфейсе)</li>
+				<li>Копировать шаблон</li>
+				<li>Перемещать шаблон (менять имя)</li>
+				<li>Удалять шаблон</li>
+			</ul>
+		</div>
+		<h4>Назначение шаблонов</h4>
+		<div class="info">
+			<p>В этой CMS шаблон можно выбирать как:</p>
+			<ul>
+				<li>Шаблон CMS (не рекомендуется использовать шаблон не предназначенный для этого)</li>
+				<li>Шаблон по умолчанию (этот шаблон будет использован страницами, если при их создании был выбран соответствующий пункт меню поля "Шаблон" или при ошибке в обращении к выбранному шаблону)</li>
+			</ul>
+		</div>
+		<h4>Пакеты шаблонов</h4>
+		<div class="info">
+			<p>В системе CMS Leonid для удобства пользователя имеется возможность использовать пакеты шаблонов. С ними возможно производить следующие действия:</p>
+			<ul>
+				<li>Установка пакета шаблонов</li>
+				<li>Откат изменений пакета шаблонов</li>
+				<li>Создание нового пакета шаблонов</li>
+				<li>Удаление пакета шаблонов</li>
+				<li>Копирование пакета шаблонов</li>
+				<li>Перемещение пакета шаблонов (смена имени)</li>
+			</ul>
+		</div>
+		<h4>Части шаблонов</h4>
+		<div class="info">
+			<p>В шаблонах имеются элементы, которые необходимо изменять редко (например, название сайта). Чтобы не пришлось изменять шаблон, который имеет HTML синтаксис, имеется возможность изменить часть шаблона, которая отвечает за это.</p>
+			<p>С частями возможно производить следующие операции:</p>
+			<ul>
+				<li>Копирование</li>
+				<li>Переименование</li>
+				<li>Создание</li>
+				<li>Изменение</li>
+				<li>Удаление</li>
+				<li>Выбор как панель управления HTML при создании страниц.</li>
+				<li>Выбор как панель навигации CMS (для плагинов)</li>
+			</ul>
+			<h5>Пакеты частей</h5>
+			<div class="info">
+				<p>Для удобного манипулирования частями имеются пакеты частей</p>
+				<ul>
+					<li>Установка пакета частей</li>
+					<li>Откат изменений пакета частей</li>
+					<li>Создание новаго пакета частей</li>
+					<li>Удаление пакета частей</li>
+					<li>Копирование пакета частей</li>
+					<li>Перемещение пакета частей (смена имени)</li>
+				</ul>
+		</div>
+		</div>
+	</div>
+	<h3>Управление</h3>
+	<div class="info">
+	<p>Со страницами возможно производить следующие действия:</p>
+	<ul>
+		<li>Создание</li>
+		<li>Изменение</li>
+		<li>Удаление страницы</li>
+		<li>Удаление директории</li>
+	</ul>
+	</div>
+	<h3>Категории</h3>
+	<div class="info">
+	<p>Категории позволяют получить удобный доступ к страницам.</p>
+	<p>С категориями возможно производить следующие действия:</p>
+	<ul>
+		<li>Создание</li>
+		<li>Изменение</li>
+		<li>Удаление</li>
+	</ul>
+	</div>
+	<h3>Управление HTML тегами</h3>
+	<div class="info">
+	<p>Страницы основаны на HTML и, поэтому, необходимо разрешения HTML тегов.</p>
+	<p>Со списком HTML тегов возможно производить следующие операции:</p>
+	<ul>
+		<li>Добавление тегов</li>
+		<li>Добавление атрибутов</li>
+		<li>Удаление тегов</li>
+		<li>Удаление атрибутов</li>
+	</ul>
+	</div>
+</div>	
+	<h2>Конфигурация и управление системой</h2>
+	<div class="info">
+	<p>Данную систему пользователь может настраивать и обновлять. Для этого присутствуют многочисленные модули CMS.</p>
+		<h3>Модульность</h3>
+		<div class="info">
+		<p>Система основывается на модулях. Присутствует основной модуль (класс CMS), модули пользовательского интерфейса (страницы CMS), модули обработки (<q>Действия</q>) и вспомогательные модули (другие классы). Но эту систему можно дополнять с помощью пользовательских модулей (плагинов и скриптовых модулей).</p>
+			<h4>Скриптовые модули</h4>
+			<div class="info">
+				<p>Скриптовые модули - это модули PHP, CSS, JavaScript, которые подключаются на страницу. Например, часы.</p>
+				<p>С ними возможно производить следующие действия:</p>
+				<ul>
+					<li>Установка</li>
+					<li>Откат изменений</li>
+					<li>Создание</li>
+					<li>Изменение</li>
+					<li>Переименование</li>
+					<li>Удаление</li>
+					<li>Обновление</li>
+				</ul>
+			</div>
+			<h4>Плагины</h4>
+			<div class="info">
+				<p>Плагин - универсальный модуль системы. Они могут производить любые действия.</p>
+				<p>С ними можно производить следующие действия:</p>
+				<ul>
+					<li>Установка</li>
+					<li>Полная деинсталляция</li>
+					<li>Деинсталляция с сохранением настроек</li>
+					<li>Создание</li>
+					<li>Удаление</li>
+					<li>Обновление</li>
+				</ul>
+			</div>
+		</div>
+	<h3>Конфигурация</h3>
+	<div class="info">
+	<p>Система автоматически обновляется.</p>
+		<h4>Настройки</h4>
+		<div class="info">
+			<p>В данной системе возможно производить настройку системных файлов таких как INI и HTACCESS</p>
+			<h5>Архивация и восстановление</h5>
+			<div class="info">
+				<p>Файлы данной системы и сайта возможно архивировать.</p>
+				<p>С архивами производить следующие действия:</p>
+				<ul>
+					<li>Создание</li>
+					<li>Создание низкого уровня</li>
+					<li>Проверка на файловые ошибки</li>
+					<li>Разархивирование и применение</li>
+				</ul>
+			</div>
+			<h5>Настройка баз данных и путей</h5>
+			<div class="info">
+				<p>В данной системе возможно настраивать временную зону, принудительно выставлять версию, менять затравку безопасности, очищать защитный счётчик, исправлять список страниц и многое другое.</p>
+				<h6>Настройки баз расширений</h6>
+				<div class="info">
+					<p>В данной системе возможно изменять базы данных расширений. Изменяются базы типов и типов MIME.</p>
+				</div>
+				<h6>Настройки путей</h6>
+				<div class="info">
+					<p>Пользователь может настроить служебные пути. А именно:</p>
+					<ul>
+						<li>Путь магазина</li>
+						<li>Путь помощи</li>
+						<li>Путь обновлений</li>
+					</ul>
+				</div>
+			</div>
+			<h5>Переменные окружения</h5>
+			<div class="info">
+				<p>В данной системе имеется возможность просматривать переменные окружения. В них входят системные константы, просмотр массивов (<code>$_SERVER</code>, <code>$_ENV</code>), просмотр информации о php (<code>phpinfo()</code>).</p>
+				<h6>Сканер функциональности PHP</h6>
+				<div class="info">
+					<p>В сканер функциональности PHP входит:</p>
+					<ul>
+						<li>Скорость хеширования</li>
+						<li>Скорость действий CMS</li>
+						<li>Выделенная память</li>
+						<li>Постепенный вывод</li>
+						<li>Все функции</li>
+						<li>Все классы</li>
+						<li>Все расширения</li>
+					</ul>
+				</div>
+			</div>
+			<h5>Управление ошибками и безопасностью</h5>
+			<div class="info">
+				<p>В данной системе имеется возможность управлять ошибками и безопасностью. Пользователи, имеющие права могут отключать стандартные средства защиты (затравку или защитный счётчик). В системе ведётся лог ошибок. Ему можно задать максимальный размер.</p>
+				<h6>Модуль <q>error</q></h6>
+				<div class="info">
+					<p>В системе CMS Leonid имеется условно называемый модуль <q>error</q>. Это автоматическое средство сбора информации об ошибках и исправления некоторых из них. Исправление ошибок - это разрешение на перезапись файла дампом памяти, который не должен содержать ошибки.</p>
+				</div>
+				<h6>Модуль <q>protector</q></h6>
+				<div class="info">
+					<p>В системе CMS Leonid имеется условно называемый модуль <q>protector</q>. Это средство автоматического уменьшения нагрузки на сервер в условиях угрозы.</p>
+				</div>
+			</div>
+		</div>
+		<h4>Файлы</h4>
+		<div class="info">
+			<p>Данная система основана на файлах, которые можно подгружать (в галерею или как системный объект), скачивать, управлять с помощью плагина <q>file</q>. Имеется возможность настраивать этот плагин (выделение цветом и настройка расширений).</p>
+		</div>
+	</div>
+	<h3>Настройка интерфейса. Темы</h3>
+	<div class="info">
+		<p>Интерфейс пользователя может быть настроен в соответствии с его пожеланиями и предпочтениями. Возможно выбирать тему для системы и фон сайта. Темы для удобства объединены в пакеты.</p>
+		<p>Темы возможно настраивать как тему CMS или как фон сайта.</p>
+		<p>Темы можно подгружать, удалять (удаление одной темы, массовое удаление тем, удаление дублей).</p>
+		<p>Возможно устанавливать пакеты тем, производить откат изменений, создавать, переименовывать, копировать, удалять.</p>
+	</div>
+</div>
+<h2>Блок-схемы</h2>
+<div class="info">
+<h3>Подробная схема</h3>
+<div class="info">
+<iframe src="help_CMS/bcm.htm" style="width: 100%; height: 800px;"></iframe>
+</div>
+<h3>Краткая схема</h3>
+<div class="info">
+<iframe src="help_CMS/bcl.htm" style="width: 100%; height: 800px;"></iframe>
+</div>
+</div>
+</div>

@@ -1,0 +1,414 @@
+#r,#g,#b,#a{
+	width: 50px;
+}
+@media(max-width: 465px){
+	#r,#g,#b,#a{
+		width: 25px;
+	}
+}
+#panel img{
+	width: 23px;
+	height: 23px;
+	margin-top: 4px;
+}
+#panel{
+	display: inline-block;
+}
+#OO{
+	font-family: monospace;
+	padding: 2px;
+	-webkit-user-modify: read-write-plaintext-only;
+	margin-left: 4px;
+	border: 2px outset #88aaff;
+	overflow: auto;
+}
+#panel *{
+	vertical-align: middle;
+}
+#panel img{
+	background-image: linear-gradient(to top, gray, white);
+}
+#panel img[alt="ACT"]{
+	background-image: linear-gradient(to bottom, gray, white);
+}
+html{
+	width: 100vw;
+	height: 100vh;
+}
+body{
+	margin: 0px;
+	width: 100vw;
+	height: 100vh;
+	background-color: #ddddff;
+	overflow: hidden;
+}
+header{
+	padding: 0;
+	margin: 0;
+	height: 100px;
+	width: 100%;
+	background-color: #bbbbcc;
+	overflow: auto;
+}
+#OO{
+	background-color: #ededff;
+	font-size: 14pt;
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+	resize: none;
+}
+section{
+	height: calc(100% - 100px);
+	width: calc(100% - 10px);
+}
+#polr{
+	 color: rgba(166, 0, 0, 0.5);
+	 background-color: rgba(166, 0, 0, 0.5);
+}
+#polg{
+	 color: rgba(166, 0, 0, 0.5);
+	 background-color: rgba(0, 166, 0, 0.5);
+}
+#polb{
+	 color: rgba(166, 0, 0, 0.5);
+	 background-color: rgba(0, 0, 166, 0.5);
+}
+#pola{
+	 color: rgba(255, 255, 255, 0.5);
+	 background-color: rgba(255, 255, 255, 0.5);
+}
+#ranged{
+	position: fixed;
+	right: 60px;
+}
+.pol{
+	border: NONE;
+	padding: 0px;
+	margin: 0px;
+	-webkit-appearance: inherit;
+	width: 215px;
+	height: 21px;
+}
+@media(max-width: 960px){
+	.pol{
+		width: 160px;
+	}
+}
+@media(max-width: 930px){
+	.pol{
+		width: 155px;
+	}
+}
+@media(max-width: 920px){
+	.pol{
+		width: 150px;
+	}
+}
+@media(max-width: 910px){
+	.pol{
+		width: 145px;
+	}
+}
+@media(max-width: 900px){
+	.pol{
+		width: 140px;
+	}
+}
+@media(max-width: 890px){
+	.pol{
+		width: 135px;
+	}
+}
+@media(max-width: 880px){
+	.pol{
+		width: 130px;
+	}
+}
+@media(max-width: 1390px){
+	.pol{
+		width: 210px;
+	}
+}
+@media(max-width: 1380px){
+	.pol{
+		width: 205px;
+	}
+}
+@media(max-width: 1370px){
+	.pol{
+		width: 200px;
+	}
+}
+@media(max-width: 1360px){
+	.pol{
+		width: 195px;
+	}
+}
+#ranged{
+	text-align: right;
+}
+@media(max-width: 1350px){
+	.pol{
+		width: 190px;
+	}
+}
+@media(max-width: 1340px){
+	.pol{
+		width: 185px;
+	}
+}
+@media(max-width: 1330px){
+	.pol{
+		width: 180px;
+	}
+}
+@media(max-width: 1320px){
+	.pol{
+		width: 175px;
+	}
+}
+@media(max-width: 1310px){
+	.pol{
+		width: 170px;
+	}
+}
+@media(max-width: 1300px){
+	.pol{
+		width: 165px;
+	}
+}
+@media(max-width: 1290px){
+	.pol{
+		width: 160px;
+	}
+}
+@media(max-width: 1280px){
+	.pol{
+		width: 155px;
+	}
+}
+@media(max-width: 1270px){
+	.pol{
+		width: 150px;
+	}
+}
+@media(max-width: 1260px){
+	.pol{
+		width: 145px;
+	}
+}
+@media(max-width: 1250px){
+	.pol{
+		width: 140px;
+	}
+}
+@media(max-width: 1240px){
+	.pol{
+		width: 135px;
+	}
+}
+@media(max-width: 1230px){
+	.pol{
+		width: 130px;
+	}
+}
+@media(max-width: 1220px){
+	.pol{
+		width: 125px;
+	}
+}
+@media(max-width: 1210px){
+	.pol{
+		width: 120px;
+	}
+}
+@media(max-width: 1200px){
+	.pol{
+		width: 115px;
+	}
+}
+@media(max-width: 1190px){
+	.pol{
+		width: 110px;
+	}
+}
+@media(max-width: 1180px){
+	.pol{
+		width: 105px;
+	}
+}
+@media(max-width: 1170px){
+	.pol{
+		width: 100px;
+	}
+}
+@media(max-width: 1160px){
+	.pol{
+		width: 95px;
+	}
+}
+@media(max-width: 972px){
+	.pol{
+		height: 18px;
+	}
+	#ranged{
+		position: static !important;
+	}
+	#v{
+		left: 2px;
+		right: unset !important;
+		top: 2px !important;
+	}
+}
+#htmlB{
+	background-image: linear-gradient(to top, gray, white);
+	vertical-align: middle;
+	height: 50px;
+	margin-top: 4px;
+}
+#cn{
+	background-position: 0px 0px, 10px 10px;
+	background-size: 20px 20px;
+	background-color: #fff3;
+	background-image:linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
+	border: 0.5px solid #ececec;
+	position: fixed;
+	right: 2px;
+}
+@media(max-width: 378px){
+	#cn{
+		right: 0px;
+		top: 55px;
+	}
+}
+@media(max-width: 1020px){
+	#rucs{
+		display: none;
+	}
+	#htmlB{
+		display: none !important;
+	}
+}
+@media(max-width: 1196px){
+	#ranged{
+		right: 2px;
+	}
+	#cn{
+		top: unset;
+		bottom: 2px;
+		right: 2px;
+		opacity: 0.9;
+		transition: 2s opacity linear;
+	}
+	#cn:hover{
+		opacity: 0;
+		transition: 0.3s opacity linear;
+	}
+}
+@media(min-width: 1100px){
+	#htmlB{
+		height: 54px;
+		margin-top: 4px;
+	}
+	#panel img{
+		width: 25px;
+		height: 25px;
+	}
+}
+@media(min-width: 1200px){
+	#htmlB{
+		height: 58px;
+		margin-top: 4px;
+	}
+	#panel img{
+		width: 26px;
+		height: 26px;
+	}
+}
+@media(min-width: 1300px){
+	#htmlB{
+		height: 58px;
+		margin-top: 4px;
+	}
+	#panel img{
+		width: 27px;
+		height: 27px;
+	}
+}
+@media(min-width: 1400px){
+	#htmlB{
+		height: 60px;
+		margin-top: 4px;
+	}
+	#panel img{
+		width: 28px;
+		height: 28px;
+	}
+}
+@media(min-width: 1500px){
+	#htmlB{
+		height: 62px;
+		margin-top: 4px;
+	}
+	#panel img{
+		width: 29px;
+		height: 29px;
+	}
+}
+@media(min-width: 1530px){
+	.pol{
+		width: 254px;/**/
+	}
+	#htmlB{
+		height: 64px;
+		margin-top: 4px;
+	}
+	#panel img{
+		width: 30px;
+		height: 30px;
+	}
+}
+@media(min-width: 1600px){
+	#htmlB{
+		height: 66px;
+		margin-top: 4px;
+	}
+	#panel img{
+		width: 31px;
+		height: 31px;
+	}
+}
+#pasteSMT{
+	display: none;
+}
+.PseudoButton{
+	padding: 3px;
+	background-image: linear-gradient(to top, gray, white);
+}
+.PseudoButton:hover{
+	background-image: linear-gradient(to top, gray, white);
+	box-shadow: 0 0 20px -4px black;
+}
+.PseudoButton:active{
+	background-image: linear-gradient(to bottom, gray, white);
+}
+.IMGDIV{
+	box-shadow: 0 0 20px -4px black;
+	position: relative;
+	display: inline-block;
+	margin: 1px;
+}
+.CHECKED{
+	opacity: 0;
+	display: inline-block;
+	position: absolute;
+	left: -5px;
+	top: -5px;
+	transform: rotate(360deg);
+	transition: all 1.5s;
+}
+#THEIMG+.CHECKED{
+	transform: rotate(0deg);
+	opacity: 1;
+	transition: all 1.5s;
+}

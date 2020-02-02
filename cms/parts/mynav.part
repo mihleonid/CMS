@@ -1,0 +1,52 @@
+<div class="link activ">
+<a href="/cms/admin.php">
+<img src="/cms/pic/main.png" title="---home---" />
+<span class="podpis">---home---</span></a>
+</div>
+<!--IsInstalled(plugin|file)-->
+<div class="link">
+<a href="/cms/file/file.php">
+<img src="/cms/pic/folder.png" title="Управление файлами"></img>
+<span class="podpis">Управление файлами</span></a>
+</div>
+<!--/IsInstalled(plugin|file)-->
+<div class="link">
+<a href="/cms/shabl.php">
+<img src="/cms/pic/pattern.png" title="---pattern---"></img>
+<span class="podpis">---pattern---</span></a>
+</div>
+<div class="link">
+<a href="/cms/mod.php">
+<img src="/cms/pic/code.png" title="---script-modul---"></img>
+<span class="podpis">---script-modul---</span></a>
+</div>
+<div class="link">
+<a href="/cms/plugin.php">
+<img src="/cms/pic/plug.png" title="---plugins---"></img>
+<span class="podpis">---plugins---</span></a>
+</div>
+<div class="link">
+<a href="/cms/part.php">
+<img src="/cms/pic/part.png" title="---parts-management---"></img>
+<span class="podpis">---parts-management---</span></a>
+</div>
+<div class="link">
+<a href="/cms/upload.php">
+<img src="/cms/pic/upload.png" title="---uploadi---"></img>
+<span class="podpis">---uploadi---</span></a>
+</div>
+<div class="link">
+<a href="/cms/download.php">
+<img src="/cms/pic/download.png" title="---downloadi---"></img>
+<span class="podpis">---downloadi---</span></a>
+</div>
+<div class="link">
+<a href="/cms/page.php">
+<img src="/cms/pic/page.png" title="---pages---"></img>
+<span class="podpis">---pages---</span></a>
+</div>
+<div class="link">
+<a href="/cms/ini_set.php">
+<img src="/cms/pic/ini.png" title="---config---"></img>
+<span class="podpis">---config---</span></a>
+</div>

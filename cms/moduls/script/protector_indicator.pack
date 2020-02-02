@@ -1,0 +1,21 @@
+a:3:{s:3:"php";s:163:"if(class_exists("\\LCMS\\MainModules\\Protector")){
+	if(\LCMS\MainModules\Protector::mode()){
+		echo('<img src="/cms/pic/protector_mini.png" id="PM" />');
+	}
+}";s:3:"css";s:224:"#PM{
+	position: fixed;
+	bottom: 0px;
+	left: 20px;
+	background-color: white;
+	border-radius: 50%;
+	display: inline-block;
+	transition: left 1s linear 3s;
+}
+#PM:hover{
+	transition: none;
+	left: calc(100% - 70px);
+}";s:2:"js";s:266:"window.addEventListener("load", function(){
+	if(document.getElementById("PM")!=null){
+		document.getElementById("PM").ondblclick=function(){if(window.confirm("Хотите отключить Protector")){window.location.assign("/cms/error.php");}};
+	}
+}, false);";}

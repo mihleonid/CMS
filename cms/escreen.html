@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style>
+html, body{
+	margin: 0;
+	padding: 0;
+	font-family: monospace;
+}
+*{
+	box-sizing: border-box;
+}
+textarea{
+	font-family: monospace;
+	border: 0;
+	background-color: #224e44;
+	color: #aaaaaa;
+	height: 100%;
+	width: 50%;
+	min-height: 100%;
+	min-width: 50%;
+	max-height: 100%;
+	max-width: 50%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	line-height: 17px;
+	resize: none;
+}
+#m{
+	font-size: 18pt;
+	font-weight: bold;
+	overflow: auto;
+	background-color: #335e54;
+	color: #aaaaaa;
+	height: 50%;
+	width: 50%;
+	min-height: 50%;
+	min-width: 50%;
+	max-height: 50%;
+	max-width: 50%;
+	position: fixed;
+	top: 50%;
+	right: 50%;
+	left: 0;
+	bottom: 0;
+}
+#t{
+	overflow: auto;
+	background-color: #335e64;
+	color: #aaaaaa;
+	height: 50%;
+	width: 50%;
+	min-height: 50%;
+	min-width: 50%;
+	max-height: 50%;
+	max-width: 50%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 50%;
+	bottom: 50%;
+}
+#save{
+	padding: 12px;
+	border-width: 0;
+	border-radius: 50%;
+	background-color: #336e54;
+	color: #bbbbbb;
+	position: fixed;
+	font-family: monospace;
+	right: 50%;
+	bottom: 0;
+	outline: 0;
+	transition: background-color 0.5s linear;
+}
+#save:hover{
+	background-color: #335e64;
+}
+#save:active{
+	background-color: #435e54;
+}
+#close{
+	padding: 12px;
+	border-width: 0;
+	border-radius: 50%;
+	background-color: #336e54;
+	color: #bbbbbb;
+	position: fixed;
+	font-family: monospace;
+	left: 0;
+	bottom: 0;
+	outline: 0;
+	transition: background-color 0.5s linear;
+}
+#close:hover{
+	background-color: #335e64;
+}
+#close:active{
+	background-color: #435e54;
+}
+.tr{
+	width: 100%;
+	background-color: #336e54;
+	color: #bbbbbb;
+	margin-bottom: 3px;
+}
+.ttr{
+	background-color: #435e54;
+}
+</style>
+<script>
+function setPosition(ctrl, pos){
+	setSelection(ctrl, pos, pos);
+}
+function setSelection(ctrl, start, end) {
+	ctrl.focus();
+	if(ctrl.setSelectionRange){
+		ctrl.setSelectionRange(start, end);
+	}else if (ctrl.createTextRange) {
+		var range = ctrl.createTextRange();
+		range.collapse(true);
+		range.moveEnd('character', end);
+		range.moveStart('character', start);
+		range.select();
+	}
+}
+function setLine(ctrl, line){
+	var o=ctrl.textContent.split("\n");
+	var pos=0;
+	for(var j in o){
+		if(j==line){
+			setPosition(ctrl, pos);
+		}
+		pos+=o[j].length;
+	}
+}
+class File{
+	constructor(name, line, text){
+		this.name=name;
+		this.line=line;
+		this.text=base64_decode(text);
+	}
+}
+var afile="";
+var arr=[];
+//PUSH
+function cl(e){
+	var a=document.getElementsByClassName("ttr");
+	if(a[0]!=undefined){
+		a[0].className="tr";
+	}
+	e.className="tr ttr";
+	var o=arr[e.id];
+	document.getElementById('text').textContent=o.text.trim();//.replace("\r", "")
+	setLine(text, o.line-1);
+	document.getElementById('text').scrollTop=(17*o.line-(document.getElementById('text').clientHeight/2));
+	afile=o.name;
+}
+document.onkeydown = function(e) {
+	if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0))) {
+		save();
+		e.preventDefault();
+	}
+};
+window.onload=function(){ document.getElementById('text').onkeydown=(function(e) {
+	if(e.keyCode==9){
+		var start = this.selectionStart;
+		var end = this.selectionEnd;
+		var value = document.getElementById('text').value;
+		document.getElementById('text').value=(value.substring(0, start)
+					+ "\t"
+					+ value.substring(end));
+		document.getElementById('text').selectionStart = document.getElementById('text').selectionEnd = start + 1;
+		e.preventDefault();
+	}
+});}
+function save(){
+	if(afile!=""){
+		var oAJAX=new XMLHttpRequest();
+		oAJAX.open("POST", "/saveerror.php", true);
+		oAJAX.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		oAJAX.send("file="+afile+"&text="+encodeURIComponent(base64_encode(document.getElementById('text').value)));
+		oAJAX.onreadystatechange=function(){
+			if(oAJAX.readyState == 4){
+				if(oAJAX.status == 200){
+					// alert(oAJAX.responseText);
+					document.getElementById('save').value="saved";
+					document.getElementById('save').style.color="white";
+					document.getElementById('save').style.fontWeight="bold";
+					window.setTimeout(function(){document.getElementById('save').value="save";document.getElementById('save').style.color="";document.getElementById('save').style.fontWeight="";}, 500);
+				}
+			}
+		};
+	}
+}
+function base64_encode(str) {
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    }));
+}
+function base64_decode(str) {
+	try{
+		return decodeURIComponent(atob(str).split('').map(function(c) {
+			return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+		}).join(''));
+	}catch(err){
+		return win2unicode(atob(str));
+	}
+}
+function win2unicode (str){
+     if (str == null){ return null;}
+     var result = "";
+     var o_code = "";
+     var i_code = "";
+     for (var I=0; I < str.length; I++){
+        i_code = str.charCodeAt(I);
+
+        if (i_code == 184){
+            o_code = 1105;
+        } else if (i_code == 168){
+            o_code = 1025;
+        } else if (i_code > 191 && i_code < 256){
+            o_code = i_code + 848;
+        } else {
+            o_code = i_code;
+        }
+        result = result + String.fromCharCode(o_code);
+     }                                                
+      
+     return result;
+}
+function close(){
+	top.document.getElementById('exceptionframe').style.display="none";
+}
+</script>
+</head>
+<body>
+<div id="t"><!--TRACE--></div>
+<div id="m"><!--MESSAGE--></div>
+<input type="button" id="save" value="save" onclick="save();">
+<input type="button" id="close" value="close" onclick="top.document.getElementById('exceptionframe').style.display='none';close();">
+<textarea id="text" spellcheck="false" wrap="off"></textarea>
+</body>
+</html>

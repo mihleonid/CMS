@@ -1,0 +1,6 @@
+<!--IsInstalled(script|fullscreen, js)-->
+<span onclick="fullscreen(document.documentElement);">CMS<img style="border-radius: 50%;" src="/cms/pic/sites_mini.png"></img>LEONID</span>
+<!--/IsInstalled(script|fullscreen, js)-->
+<!--NotInstalled(script|fullscreen, js)-->
+CMS<img style="border-radius: 50%;" src="/cms/pic/sites_mini.png"></img>LEONID
+<!--/NotInstalled(script|fullscreen, js)-->

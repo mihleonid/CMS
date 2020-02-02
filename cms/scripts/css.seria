@@ -1,0 +1,30 @@
+a:3:{s:3:"was";s:41:"body{
+font-family: "Times New Roman";
+}";s:19:"protector_indicator";s:224:"#PM{
+	position: fixed;
+	bottom: 0px;
+	left: 20px;
+	background-color: white;
+	border-radius: 50%;
+	display: inline-block;
+	transition: left 1s linear 3s;
+}
+#PM:hover{
+	transition: none;
+	left: calc(100% - 70px);
+}";s:5:"clock";s:234:"#clock{
+position: fixed;
+right: 5px;
+bottom: 5px;
+color: #000000;
+opacity: 0.75;
+width: auto;
+height: auto;
+cursor: default;
+font-size: 15pt;
+transition: opacity 1s;
+}
+#clock:hover{
+opacity: 0;
+transition: opacity 2s;
+}";}

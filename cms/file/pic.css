@@ -1,0 +1,109 @@
+html{
+	overflow: hidden;
+}
+body{
+	overflow: hidden;
+}
+section{
+	overflow: auto;
+	width: 100%;
+}
+canvas{
+	cursor: crosshair;
+}
+input:focus{
+	outline: none;
+}
+input:active{
+	outline: blue 0.5px solid;
+}
+@media(max-width: 680px){
+	.pol{
+		width: 120px;
+	}
+}
+@media(max-width: 610px){
+	.pol{
+		width: 110px;
+	}
+}
+@media(max-width: 600px){
+	.pol{
+		width: 100px;
+	}
+}
+@media(max-width: 570px){
+	.pol{
+		width: 90px;
+	}
+}
+@media(max-width: 520px){
+	.pol{
+		width: 80px;
+	}
+	header{
+		font-size: 8pt;
+	}
+}
+.wid{
+	width: 50px;
+}
+@media(max-width: 465px){
+	.pol{
+		width: 75px;
+	}
+	header{
+		font-size: 7.5pt;
+	}
+	.wid{
+		width: 25px;
+	}
+}
+#polr{
+	 color: rgba(166, 0, 0, 0.5);
+	 background-color: rgba(166, 0, 0, 0.5);
+}
+#polg{
+	 color: rgba(166, 0, 0, 0.5);
+	 background-color: rgba(0, 166, 0, 0.5);
+}
+#polb{
+	 color: rgba(166, 0, 0, 0.5);
+	 background-color: rgba(0, 0, 166, 0.5);
+}
+#ranged{
+	position: fixed;
+	right: 60px;
+}
+#pola{
+	 color: rgba(255, 255, 255, 0.5);
+	 background-color: rgba(255, 255, 255, 0.5);
+}
+#brr{
+	display: none;
+}
+@media(max-width: 378px){
+	#warning{
+		display: none;
+	}
+	#ranged{
+		right: 0px;
+		top: 10px;
+	}
+	#cn{
+		right: 0px;
+		top: 55px;
+	}
+	#brr{
+		display: inline;
+	}
+}
+#cn{
+	background-position: 0px 0px, 10px 10px;
+	background-size: 20px 20px;
+	background-image:linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
+	border: 0.5px solid #ececec;
+}
+section{
+	cursor: default;
+}

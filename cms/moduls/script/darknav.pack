@@ -1,0 +1,11 @@
+a:1:{s:3:"css";s:129:"nav *, nav {
+    filter: invert();
+}
+
+nav * * {
+    filter: none;
+}
+
+nav a span {
+    filter: invert() brightness(2);
+}";}

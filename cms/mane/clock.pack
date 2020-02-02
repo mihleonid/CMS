@@ -1,0 +1,65 @@
+a:3:{s:3:"php";s:264:"$h=date("H");
+if(strlen($h)!=2){
+$h="0".$h;
+}
+$i=date("i");
+if(strlen($h)!=2){
+$i="0".$i;
+}
+$s=date("s");
+if(strlen($h)!=2){
+$s="0".$s;
+}
+$time=$h.":".$i.":".$s;
+echo("<div id=\"clock\">$time</div>");
+unset($time);
+unset($s);
+unset($h);
+unset($i);";s:3:"css";s:234:"#clock{
+position: fixed;
+right: 5px;
+bottom: 5px;
+color: #000000;
+opacity: 0.75;
+width: auto;
+height: auto;
+cursor: default;
+font-size: 15pt;
+transition: opacity 1s;
+}
+#clock:hover{
+opacity: 0;
+transition: opacity 2s;
+}";s:2:"js";s:546:"window.setInterval(function(){
+var h=document.getElementById('clock').innerHTML.substr(0,2);
+var i=document.getElementById('clock').innerHTML.substr(3,2);
+var s=document.getElementById('clock').innerHTML.substr(6,2);
+h=parseInt(h);
+i=parseInt(i);
+s=parseInt(s);
+s+=1;
+if(s>59){
+	s=0;
+	i+=1;
+}
+if(i>59){
+	i=0;
+	h+=1;
+}
+if(h>23){
+	h=0;
+}
+s=s+"";
+i=i+"";
+h=h+"";
+if(s.length!=2){
+	s="0"+s;
+}
+if(i.length!=2){
+	i="0"+i;
+}
+if(h.length!=2){
+	h="0"+h;
+}
+document.getElementById('clock').innerHTML=h+":"+i+":"+s;
+}, 1000);";}
