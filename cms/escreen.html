@@ -154,7 +154,7 @@ function cl(e){
 	}
 	e.className="tr ttr";
 	var o=arr[e.id];
-	document.getElementById('text').textContent=o.text.trim();//.replace("\r", "")
+	document.getElementById('text').textContent=o.text.trim().replace("\r", "");
 	setLine(text, o.line-1);
 	document.getElementById('text').scrollTop=(17*o.line-(document.getElementById('text').clientHeight/2));
 	afile=o.name;
@@ -191,6 +191,8 @@ function save(){
 					document.getElementById('save').style.color="white";
 					document.getElementById('save').style.fontWeight="bold";
 					window.setTimeout(function(){document.getElementById('save').value="save";document.getElementById('save').style.color="";document.getElementById('save').style.fontWeight="";}, 500);
+				}else{
+					alert("Ошибка сохранения!");
 				}
 			}
 		};
@@ -229,8 +231,7 @@ function win2unicode (str){
             o_code = i_code;
         }
         result = result + String.fromCharCode(o_code);
-     }                                                
-      
+     }
      return result;
 }
 function close(){
